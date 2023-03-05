@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SimpleSAML\Module\accountlinker\Auth\Process;
+namespace SimpleSAML\Module\geant\Auth\Process;
 
 use SimpleSAML\Assert\Assert;
 use SimpleSAML\Auth;
@@ -10,7 +10,7 @@ use SimpleSAML\Configuration;
 use SimpleSAML\Error;
 use SimpleSAML\Logger;
 use SimpleSAML\Module;
-use SimpleSAML\Module\accountlinker\Store\SQLStore;
+use SimpleSAML\Module\geant\Store\SQLStore;
 
 use function array_key_exists;
 
@@ -53,7 +53,7 @@ class AccountLinker extends Auth\ProcessingFilter
      * Get Account Linking Store
      *
      * @param array $config Configuration array
-     * @return \SimpleSAML\Module\accountlinker\Store\SQLStore
+     * @return \SimpleSAML\Module\geant\Store\SQLStore
      */
     protected function getStore(array $config): SQLStore
     {

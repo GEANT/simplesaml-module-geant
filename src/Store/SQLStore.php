@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SimpleSAML\Module\accountlinker\Store;
+namespace SimpleSAML\Module\geant\Store;
 
 use Exception;
 use PDO;
@@ -100,7 +100,7 @@ class SQLStore
      */
     public function __construct(array $config)
     {
-        $this->accountLinkerConfig = Configuration::getConfig('module_accountlinker.php');
+        $this->accountLinkerConfig = Configuration::getConfig('module_geant.php');
         foreach (['dsn', 'username', 'password'] as $param) {
             $config[$param] = $this->accountLinkerConfig->getOptionalString($param, null);
             if ($config[$param] === null) {

@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SimpleSAML\\Module\\accountlinker\\": "src/"
+            "SimpleSAML\\Module\\geant\\": "src/"
         }
     },
     "autoload-dev": {
