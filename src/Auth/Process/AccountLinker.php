@@ -101,7 +101,7 @@ class AccountLinker extends Auth\ProcessingFilter
 
         if ($this->store->saveAttributes()) {
             $state['Attributes'][$this->accountIdPrefix . ':user_id'] = [
-                $this->store->saveSpEntityId()
+                strval($this->store->saveSpEntityId())
             ];
 
             Logger::stats('AccountLinker: === END ===');
