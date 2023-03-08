@@ -7,6 +7,8 @@ namespace SimpleSAML\Module\geant;
 use Twig\Environment;
 use SimpleSAML\Configuration;
 use SimpleSAML\XHTML\TemplateControllerInterface;
+use SimpleSAML\Logger;
+use SimpleSAML\Module;
 
 class ThemeTncController implements TemplateControllerInterface
 {
@@ -19,7 +21,7 @@ class ThemeTncController implements TemplateControllerInterface
         $moduleConfig = Configuration::getConfig('module_geant.php');
         $tncs = $moduleConfig->getArray('tncs');
 
-        $tnc_pics_dir = '../modules/geant/public/assets/gfx';
+        $tnc_pics_dir = Module::getModuleDir('geant') . '/public/assets/gfx';
         $tnc_pics = array_values(preg_grep("/^tnc\d{4}_\d+\.(jpg|png)$/", scandir($tnc_pics_dir)));
         $tnc_pic = $tnc_pics[rand(0,count($tnc_pics)-1)];
 
