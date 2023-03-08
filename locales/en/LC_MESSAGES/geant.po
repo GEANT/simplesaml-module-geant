@@ -1,2 +1,8 @@
-msgid "Hello world"
-msgstr "Hello world"
+msgid "{discopower:tabs:all}"
+msgstr "All"
+
+msgid "{discopower:tabs:socialnet}"
+msgstr "Social networks"
+
+msgid "{discopower:tabs:guest}"
+msgstr "Guest providers"
