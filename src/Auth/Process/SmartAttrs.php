@@ -330,7 +330,7 @@ class SmartAttrs extends Auth\ProcessingFilter {
             'countryName' => $this->getCountryName($attributes),
         );
 
-        Logger::debug('Synthesized attributes: ' . var_export($collected,True));
+        Logger::debug('Synthesized attributes: ' . json_encode($collected));
         foreach($collected as $c=>$v) {
             if(isset($c)) {
                 $state['Attributes'][$c] = $v;
