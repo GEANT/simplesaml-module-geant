@@ -25,9 +25,9 @@ class MellonTruncate extends Auth\ProcessingFilter {
 
         foreach ($state['Attributes'] as $name => $values) {
 
-            if (strlen($name) > 12) {
-                Logger::debug("Attribute name '$name' too long, truncating it to 12 chars");
-                $newname = substr($name, 0, 12);
+            if (strlen($name) > 127) {
+                Logger::debug("Attribute name '$name' too long, truncating it to 127 chars");
+                $newname = substr($name, 0, 127);
                 $state['Attributes'][$newname] = $values;
                 unset($state['Attributes'][$name]);
             }
