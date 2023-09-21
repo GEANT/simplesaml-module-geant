@@ -27,17 +27,18 @@ class MellonTruncate extends Auth\ProcessingFilter {
 
             if (strlen($name) > 127) {
                 Logger::debug("Attribute name '$name' too long, truncating it to 127 chars");
-                $newname = substr($name, 127);
-                $request['Attributes'][$newname] = $values;
-                unset($request['Attributes'][$name]);
+                $newname = substr($name, 0, 127);
+                $state['Attributes'][$newname] = $values;
+                unset($state['Attributes'][$name]);
             }
 
             $too_long_values = array_filter($values, function($x) { return strlen($x) > 383; });
+
             foreach ($too_long_values as $tl) {
                 Logger::debug("Attribute value '$tl' too long, truncating it to 383");
             }
             if(count($too_long_values) > 0) {
-                $request['Attributes'][$name] = array_map(function($x) {return substr($x, 0, 383); }, $values);
+                $state['Attributes'][$name] = array_map(function($x) {return substr($x, 0, 383); }, $values);
             }
         }
     }
