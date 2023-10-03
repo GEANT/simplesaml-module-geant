@@ -9,7 +9,7 @@ use SimpleSAML\Auth;
 use SimpleSAML\Error;
 use SimpleSAML\Logger;
 use SimpleSAML\Metadata;
-
+use SAML2\XML\saml\NameID;
 
 /**
  * Based on what an IdP sends, generate a set of attributes that
@@ -312,11 +312,10 @@ class SmartAttrs extends Auth\ProcessingFilter {
         $metadata = Metadata\MetaDataStorageHandler::getMetadataHandler();
         $idpmeta = $metadata->getMetaData($entityID, 'saml20-idp-remote');
 
-        // ePTID needs special care from 1.14 on, as it can be DOMNodeList object
         // See https://simplesamlphp.org/docs/stable/simplesamlphp-upgrade-notes-1.14
         if (isset($attributes['eduPersonTargetedID'][0])) {
-            if ($attributes['eduPersonTargetedID'][0] instanceof SAML2\XML\saml\NameID) {
-                $request['Attributes']['eduPersonTargetedID'] = array($attributes['eduPersonTargetedID'][0]->getValue());
+            if ($attributes['eduPersonTargetedID'][0] instanceof NameID) {
+                $attributes['eduPersonTargetedID'] = [($attributes['eduPersonTargetedID'][0]->getValue())];
             }
         }
 
@@ -330,7 +329,7 @@ class SmartAttrs extends Auth\ProcessingFilter {
             'countryName' => $this->getCountryName($attributes),
         );
 
-        Logger::debug('Synthesized attributes: ' . var_export($collected,True));
+        Logger::debug('Synthesized attributes: ' . json_encode($collected));
         foreach($collected as $c=>$v) {
             if(isset($c)) {
                 $state['Attributes'][$c] = $v;

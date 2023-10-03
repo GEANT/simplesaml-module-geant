@@ -1,41 +1,45 @@
 <?php
 
+declare(strict_types=1);
+
+namespace SimpleSAML\Module\geant\Auth\Process;
+
+use SimpleSAML\Assert\Assert;
+use SimpleSAML\Auth;
+use SimpleSAML\Error;
+use SimpleSAML\Logger;
+
 /**
- * last resort for fall-back.
+ * Truncate attribute names and values for use with mod_mellon
  *
- * @author Dyonisius Visser <visser@terena.org>
- * @package simpleSAMLphp
- * @version $Id: SmartAttrs.php 26 2011-05-24 20:26:32Z visser $
+ * @package SimpleSAMLphp
  */
-class sspmod_terena_Auth_Process_MellonTruncate extends SimpleSAML_Auth_ProcessingFilter {
 
-	/**
-	 * Attributes which should be added/appended.
-	 *
-	 * Assiciative array of arrays.
-	 */
-	private $attributes = array();
+class MellonTruncate extends Auth\ProcessingFilter {
 
-	public function process(&$request) {
-		assert('is_array($request)');
-		assert('array_key_exists("Attributes", $request)');
+    public function process(array &$state): void {
 
-		// Truncate attribute names
-		foreach ($request['Attributes'] as $name => $value) {
-			if(strlen($name) > 127) {
-				SimpleSAML_Logger::debug('Name too long: '.$name);
-				$newname = substr($name, 0, 127);
-				$request['Attributes'][$newname] = $value;
-				unset($request['Attributes'][$name]);
-			}
-			
-		}
+        Assert::keyExists($state, 'Attributes');
 
-		// Truncate attribute values
-		foreach ($request['Attributes'] as $name => $value) {
-			$request['Attributes'][$name] = array_map(function($v) {return substr($v, 0, 383); }, $value);
-		}
-	}
+        $mapped_attributes = [];  // FIXME do we need this?
+
+        foreach ($state['Attributes'] as $name => $values) {
+
+            if (strlen($name) > 127) {
+                Logger::debug("Attribute name '$name' too long, truncating it to 127 chars");
+                $newname = substr($name, 0, 127);
+                $state['Attributes'][$newname] = $values;
+                unset($state['Attributes'][$name]);
+            }
+
+            $too_long_values = array_filter($values, function($x) { return strlen($x) > 383; });
+
+            foreach ($too_long_values as $tl) {
+                Logger::debug("Attribute value '$tl' too long, truncating it to 383");
+            }
+            if(count($too_long_values) > 0) {
+                $state['Attributes'][$name] = array_map(function($x) {return substr($x, 0, 383); }, $values);
+            }
+        }
+    }
 }
-
-?>
