@@ -6,3 +6,6 @@ msgstr "Social networks"
 
 msgid "{discopower:tabs:guest}"
 msgstr "Guest providers"
+
+msgid "{discopower:tabs:incremental_search}"
+msgstr "Incremental search..."
