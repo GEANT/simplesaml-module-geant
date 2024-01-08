@@ -2,8 +2,60 @@
 # Metadata for TNC images
 images:
 
+  - filename: tnc2004_1.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2004/m605.jpg
+  - filename: tnc2004_2.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2004/m578.jpg
+
+  - filename: tnc2005_1.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2005/sunday/x776.jpg
+  - filename: tnc2005_2.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2005/sunday/x779.jpg
+  - filename: tnc2005_3.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2005/wednesday/x1058.jpg
+  - filename: tnc2005_4.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2005/wednesday/x1070.jpg
+  - filename: tnc2005_5.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2005/thursday/x1094.jpg
+
+  - filename: tnc2006_1.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2006/x218.jpg
+  - filename: tnc2006_2.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2006/monday/x200.jpg
+  - filename: tnc2006_3.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2006/monday/x271.jpg
+  - filename: tnc2006_4.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2006/wednesday/x391.jpg
+  - filename: tnc2006_5.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2006/wednesday/x508.jpg
+
+  - filename: tnc2007_1.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2007/monday/tIMG_1357.jpg
+  - filename: tnc2007_2.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2007/wednesday/tIMG_1417.jpg
+  - filename: tnc2007_3.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2007/wednesday/tIMG_1414.jpg
+  - filename: tnc2007_4.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2007/wednesday/tIMG_1416x.jpg
+
   - filename: tnc2008_1.jpg
-    copyright:
+    copyright: GEANT
     original_url: https://geant.app.box.com/file/51141568189
   - filename: tnc2008_2.jpg
     copyright: Vassiliki Poulli
@@ -15,6 +67,18 @@ images:
   - filename: tnc2009_1.jpg
     copyright: Martin Bech
     original_url: http://bech.deic.dk/tnc2009/AC_Hotels_Malaga_Palacio_Roof_2.jpg
+  - filename: tnc2009_2.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2009/monday/tIMG_3637.jpg
+  - filename: tnc2009_3.jpg
+    copyright: John Dyer
+    original_url: https://geant.app.box.com/file/51140280789
+  - filename: tnc2009_4.jpg
+    copyright: Martin Bech
+    original_url: http://bech.deic.dk/tnc2009/tuesday/tIMG_3785.jpg
+  - filename: tnc2009_5.jpg
+    copyright: GEANT
+    original_url: https://geant.app.box.com/file/51144415853
 
   - filename: tnc2010_1.jpg
     copyright: Martin Bech
