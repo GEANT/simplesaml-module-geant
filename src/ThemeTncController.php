@@ -36,7 +36,7 @@ class ThemeTncController implements TemplateControllerInterface
         $data['tnc_pic'] = $pic['filename'];
         $data['tnc_name'] = $tnc_name;
         $data['tnc_url'] = $tnc_url;
-        $data['copyrigth'] = $pic['copyright'];
+        $data['copyright'] = $pic['copyright'];
         $data['original_url'] = $pic['original_url'];
     }
 
