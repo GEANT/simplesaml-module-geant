@@ -20,9 +20,9 @@ class ThemeTncController implements TemplateControllerInterface
     {
         $moduleConfig = Configuration::getConfig('module_geant.php');
         $tncs = $moduleConfig->getArray('tncs');
+        $tnc_pics = $moduleConfig->getArray('tnc_pics');
 
         $tnc_pics_dir = Module::getModuleDir('geant') . '/public/assets/gfx';
-        $tnc_pics = yaml_parse_file('/etc/simplesamlphp/wayf/metadata.yml');
         $pic = $tnc_pics[rand(0,count($tnc_pics)-1)];
 
         $tnc_year = substr($pic['filename'], 3, 4);
