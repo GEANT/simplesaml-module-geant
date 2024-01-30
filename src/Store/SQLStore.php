@@ -80,7 +80,7 @@ class SQLStore
     /**
      * Entityid_id from entityid table
      */
-    private ?int $entityidId = null;
+    private $entityidId = null;
 
     /**
      * Account_id from attributes table
