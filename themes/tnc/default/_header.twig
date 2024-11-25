@@ -4,10 +4,10 @@
 {% set hideLanguageBar = true %}
 <header id="header">
   <div class="wrap">
-<img id="geant" src="{{ asset('gfx/geant-logo-white.svg', 'geant') }}" alt="GÉANT logo"/>
-<p class="credits">
-    Picture from <a title="Go to {% if 'web.archive.org' in tnc_url %}an archived copy of {% endif %}the {{ tnc_name }} website" href="{{ tnc_url }}">{{ tnc_name }}</a> in {{ tnc_location|e }} &copy; {{ copyright|e }}
-</p>
+    <img id="geant" src="{{ asset('gfx/geant-logo-white.svg', 'geant') }}" alt="GÉANT logo"/>
+    <p class="credits">
+        Picture from <a title="Go to {% if 'web.archive.org' in tnc_url %}an archived copy of {% endif %}the {{ tnc_name }} website" href="{{ tnc_url }}">{{ tnc_name }}</a> in {{ tnc_location|e }} &copy; {{ copyright|e }}
+    </p>
     {% if not hideLanguageBar %}
     <div class="menuspace">
       <a href="" id="menuLink" class="menu-link hide-for-large">
