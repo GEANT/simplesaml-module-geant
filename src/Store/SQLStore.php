@@ -492,6 +492,11 @@ class SQLStore
             ':entity_id' => $this->getEntityidId(),
             ':aorder' => 4
         ]);
+        $stmt->execute([
+            ':attribute_id' => 458,
+            ':entity_id' => $this->getEntityidId(),
+            ':aorder' => 5
+        ]);
         return $this;
     }
 
