@@ -312,13 +312,6 @@ class SmartAttrs extends Auth\ProcessingFilter {
         $metadata = Metadata\MetaDataStorageHandler::getMetadataHandler();
         $idpmeta = $metadata->getMetaData($entityID, 'saml20-idp-remote');
 
-        // See https://simplesamlphp.org/docs/stable/simplesamlphp-upgrade-notes-1.14
-        if (isset($attributes['eduPersonTargetedID'][0])) {
-            if ($attributes['eduPersonTargetedID'][0] instanceof NameID) {
-                $attributes['eduPersonTargetedID'] = [($attributes['eduPersonTargetedID'][0]->getValue())];
-            }
-        }
-
         $collected = array(
             'mail' => $this->getMail($attributes),
             'givenName' => $this->getGivenName($attributes),
