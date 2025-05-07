@@ -4,6 +4,12 @@ body {
   background-color: #ddd;
 }
 
+#header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 14rem;
+}
+
 div.wrap {
     margin-left: 2%;
     margin-right: 2%;

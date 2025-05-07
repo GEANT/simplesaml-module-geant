@@ -22,7 +22,6 @@ class ThemeTncController implements TemplateControllerInterface
         $tncs = $moduleConfig->getArray('tncs');
         $tnc_pics = $moduleConfig->getArray('tnc_pics');
 
-        $tnc_pics_dir = Module::getModuleDir('geant') . '/public/assets/gfx';
         $pic = $tnc_pics[rand(0,count($tnc_pics)-1)];
 
         $tnc_year = substr($pic['filename'], 3, 4);
@@ -39,5 +38,4 @@ class ThemeTncController implements TemplateControllerInterface
         $data['copyright'] = $pic['copyright'];
         $data['original_url'] = $pic['original_url'];
     }
-
 }
